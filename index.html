@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Egocentric Thermal and RGBD Dataset</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#project">Project</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#dataset">Dataset</a>
+                    </li>
+                    <li>
+                        <a href="#docs">Docs</a>
+                    </li>
+                    <li>
+                        <a href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row" id="project">
+            <div class="col-lg-12">
+                <h2 class="page-header">Scene Semantic Reconstruction from Egocentric RGB-D-Thermal Videos</h2>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+            <iframe width="736" height="414" src="https://www.youtube.com/embed/jWHPHc9zKHc" frameborder="0" allowfullscreen></iframe>
+            <!-- Default width and height were 560 and 315 -->
+            </div>
+
+            <div class="col-md-4">
+                <p>The Stanford Egocentric Thermal and RGBD Dataset provides egocentric RGB-D-Thermal (RGB-D-T) videos of humans performing daily real-word activities. The locations of the hands and of objects that interact with the hands are annotated. In this project, we used this dataset as an input to a framework for joint 6 DOF camera localization, 3D reconstruction, and semantic segmentation. All of our materials are open-sourced, including our code and our designs for the demonstration hardware platform used to acquire this dataset. </p>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+
+        <!-- About Row -->
+        <div class="row" id="dataset">
+
+            <div class="col-lg-12">
+                <h3 class="page-header"><a href="dataset.html">Dataset</a></h3>
+            </div>
+
+            <div class="col-sm-4 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="images/rgb.png" alt="">
+                </a>
+                <p align="center">RGB</p>
+            </div>
+
+            <div class="col-sm-4 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="images/depth.png" alt="">
+                </a>
+                <p align="center">Depth</p>
+            </div>
+
+            <div class="col-sm-4 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="images/thermal.png" alt="" style="width:100%;">
+                </a>
+                <p align="center">Thermal</p>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <br>
+        <p>To collect our dataset, we designed a multi-modal data acquisition system combining an RGB-D camera (an Intel RealSense SR300) with a mobile thermal camera (a Flir One Android). We then used this setup to collect a large dataset of aligned multi-modal videos, and annotated semantically relevant information in these videos. We mounted both cameras on a GoPro chest harness and connected them through a single USB 3.0 cable to a lightweight laptop kept in the backpack of the data collector. We developed a GNU/Unix driver for the Flir One, since the camera was originally designed for Android mobile phones. We also time synchronized the cameras using the frame rate of the slower of the two cameras (the Flir One), resulting in a data acquisition rate of approximately 8.33 FPS. Our code for setting up this system is linked in the section below. </p>
+
+        <p>Our dataset includes approximately 250 videos of people performing various activities. These activities are divided into four high-level categories - kitchen, office, recreation, and household - with 44 different types of action sequences distributed across these four categories. We observed 14 different people collecting data over more than 20 different environments. All interactions in our dataset are very natural, since we did not give the data collectors any specific instructions other than asking them to wear the camera while performing the high-level activities. Also, since we did not tell the data collectors which actions to perform, the distribution of the dataset reflects the natural distribution of activities that the data collectors do routinely. </p><br>
+
+        <p>Number of Videos: 248 <br>
+        Number of Activity Types: 44</p>
+
+        <br>
+
+        <p>To see more examples or download the dataset, click <a href="dataset.html">here</a>.</p>
+
+
+
+        <!-- Project Row -->
+        <div class="row" id="docs">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Paper and Code</h3>
+            </div>
+
+            <div class="col-sm-3">
+                <center><a href="documents/paper.pdf" target="_blank">
+                <img class="sm" id="pr2_dl" src="images/paper_icon.png" alt="" style="height:150px;">
+                </a></center>
+            </div>
+
+            <div class="col-sm-9"> 
+                <br>
+                <b>Scene Semantic Reconstruction from Egocentric RGB-D-Thermal Videos</b><br>
+                Rachel Luo, Ozan Sener, Silvio Savarese<br>
+                In <i>3D Vision (3DV)</i>, 2017
+                <br>
+                <a href="documents/paper.pdf" target="_blank">[Paper]</a>
+                <a href="documents/supplement.pdf" target="_blank">[Supplement]</a>
+                <a href="https://github.com/rsluo/ego-rgbdt-camera-setup">[Github]</a>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+
+        <!-- Contributors Row -->
+        <div class="row" id="team">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Contributors</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6" align="center">
+                <img class="img-responsive portfolio-item" src="images/rachel.JPG" alt="" style="height:200px;">
+                <p align="center">Rachel Luo</p>
+            </div>
+
+            <div class="col-sm-3 col-xs-6" align="center">
+                <a href=http://ozansener.net target="_blank">
+                    <img class="img-responsive portfolio-item" src="images/ozan.png" alt="" style="height:200px;">
+                    <p align="center">Ozan Sener</p>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6" align="center">
+                <a href="http://cvgl.stanford.edu/silvio/" target="_blank">
+                    <img class="img-responsive portfolio-item" src="images/silvio.png" alt="" style="height:200px;">
+                    <p align="center">Silvio Savarese</p>
+                </a>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; Stanford University 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
